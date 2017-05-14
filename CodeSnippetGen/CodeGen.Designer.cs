@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.generatedCode = new System.Windows.Forms.TextBox();
+            this.generatedCode = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // generatedCode
             // 
+            this.generatedCode.AcceptsTab = true;
+            this.generatedCode.AutoWordSelection = true;
             this.generatedCode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.generatedCode.Location = new System.Drawing.Point(0, 0);
-            this.generatedCode.Multiline = true;
             this.generatedCode.Name = "generatedCode";
             this.generatedCode.Size = new System.Drawing.Size(284, 262);
             this.generatedCode.TabIndex = 0;
+            this.generatedCode.Text = "";
             // 
             // CodeGen
             // 
@@ -50,13 +52,13 @@
             this.Text = "Code Gen";
             this.Load += new System.EventHandler(this.CodeGen_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox generatedCode;
+        private System.Windows.Forms.RichTextBox generatedCode;
+
     }
 }
 

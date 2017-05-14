@@ -22,8 +22,9 @@ namespace CodeSnippetGen
         {
             var targetType = typeof(Root);
             var constructedSnippet = SnippetGenerator.ConstructClassSnippet(targetType) + ";";
-            generatedCode.Text = constructedSnippet;            
+            generatedCode.Text = constructedSnippet;
         }
     }
 
+   
 }
