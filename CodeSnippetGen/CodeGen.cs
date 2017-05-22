@@ -20,8 +20,7 @@ namespace CodeSnippetGen
 
         private void CodeGen_Load(object sender, EventArgs e)
         {
-            var targetType = typeof(Root);
-            var constructedSnippet = SnippetGenerator.ConstructClassSnippet(targetType) + ";";
+            var constructedSnippet = SnippetGenerator.ConstructClassSnippet(typeof(Root)) + ";";
             generatedCode.Text = constructedSnippet;
         }
     }

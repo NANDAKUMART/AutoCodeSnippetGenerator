@@ -40,11 +40,22 @@ namespace CodeSnippetGen
             return " " + propName + " = new List<" + type.FullName + ">() { } ";
         }
 
-        public static string ConstructCollectionObjectSnippet(this Type type, string propName)
+        public static string ConstructCollectionObjectSnippet(this Type type, string propName, Type parentType)
         {
-            var currentMemberSnippet = propName + " = " + "new List<" + type.FullName + ">(){\n\t";
-            currentMemberSnippet += type.ConstructClassSnippet();
-            return currentMemberSnippet += "\n }";
+            var currentMemberSnippet = propName + " = ";
+
+            if (parentType.FullName.Equals(type.FullName))
+            {
+                currentMemberSnippet += " null";
+            }
+            else
+            {
+                currentMemberSnippet += "new List<" + type.FullName + ">(){\n\t";
+                currentMemberSnippet += type.ConstructClassSnippet();
+                currentMemberSnippet += "\n }";
+            }
+
+            return currentMemberSnippet;
         }
 
         public static string ConstructMemberSnippet(this Type targetType, string propName)
@@ -117,7 +128,7 @@ namespace CodeSnippetGen
                     }
                     else if (prop.PropertyType.IsGenericType)
                     {
-                        currentMemberSnippet = prop.PropertyType.ConstructGenericSnippet(prop.Name);
+                        currentMemberSnippet = prop.PropertyType.ConstructGenericSnippet(prop.Name, targetType);
                     }
                     else if (prop.PropertyType.IsClass)
                     {
@@ -136,14 +147,14 @@ namespace CodeSnippetGen
             return stringifiedSnippet;
         }
 
-        public static string ConstructGenericSnippet(this Type type, string propName)
+        public static string ConstructGenericSnippet(this Type type, string propName, Type parentType)
         {
             var currentMemberSnippet = "";
             var elementType = type.GetGenericArguments()[0];
             if (elementType.IsPrimitiveType())
                 currentMemberSnippet = elementType.ConstructCollectionValueSnippet(propName);
             else
-                currentMemberSnippet = elementType.ConstructCollectionObjectSnippet(propName);
+                currentMemberSnippet = elementType.ConstructCollectionObjectSnippet(propName, parentType);
             return currentMemberSnippet;
         }
 

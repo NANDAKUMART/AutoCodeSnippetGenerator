@@ -17,6 +17,7 @@ namespace CodeSnippetGen
         public Child Prop_I { get; set; }
         public List<int> Prop_J { get; set; }
         public Child[] Prop_K { get; set; }
+        public List<Root> ChildList { get; set; }
     }
 
     public class Child
