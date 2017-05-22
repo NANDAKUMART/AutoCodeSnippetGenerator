@@ -16,7 +16,7 @@ Creating Object initializer for class in C#
 
 4. How to get the final required code:-
  <xmp>
-          Thats very simple. Call this statement with the target type, on which you want to construct the C# Object Code Initializer.	  SnippetGenerator.ConstructClassSnippet(typeof(<Target Type Goes Here));This returns a string data which is the required code for you!
+          Thats very simple. Call this statement with the target type, on which you want to construct the C# Object Code Initializer.	  SnippetGenerator.ConstructClassSnippet(typeof(Target Type Goes Here));This returns a string data which is the required code for you!
 </xmp>
 
 5. Oh, Really will it produce?
@@ -51,63 +51,55 @@ Creating Object initializer for class in C#
         public int GH { get; set; }
     }
    </code>	
-	</pre>
+   </pre>
 	
 	by passing the type of Root class to the statement as SnippetGenerator.ConstructClassSnippet(typeof(Root)), will produce the result as follows:-
 	
 	<pre>
 	<code>
-            new CodeSnippetGen.Root()
-            {
-                Prop_A = 0,
-                Prop_B = 0f,
-                Prop_C = String.Empty,
-                Prop_D = true,
-                Prop_E = new List<CodeSnippetGen.Child>(){
-	    new CodeSnippetGen.Child() 
-{ 
-Name =  String.Empty  , 
- Child2Data = new CodeSnippetGen.Child_2() 
-{ 
-GH = 0 
- }  
- } 
- },
-                Prop_F = null,
-                Prop_H = new System.String[] { },
-                Prop_I = new CodeSnippetGen.Child()
-                {
-                    Name = String.Empty,
-                    Child2Data = new CodeSnippetGen.Child_2()
-                    {
-                        GH = 0
-                    }
-                },
-                Prop_J = new List<System.Int32>() { },
-                Prop_K = new CodeSnippetGen.Child[] { 
-	new CodeSnippetGen.Child() 
-{ 
-Name =  String.Empty  , 
- Child2Data = new CodeSnippetGen.Child_2() 
-{ 
-GH = 0 
- }  
- } 
- },
-                ChildList = null
-            };
-  
+            new CodeSnippetGen.Root() {
+     Prop_A = 0,
+      Prop_B = 0 f,
+      Prop_C = String.Empty,
+      Prop_D = true,
+      Prop_E = new List < CodeSnippetGen.Child > () {
+       new CodeSnippetGen.Child() {
+        Name = String.Empty,
+         Child2Data = new CodeSnippetGen.Child_2() {
+          GH = 0
+         }
+       }
+      },
+      Prop_F = null,
+      Prop_H = new System.String[] {},
+      Prop_I = new CodeSnippetGen.Child() {
+       Name = String.Empty,
+        Child2Data = new CodeSnippetGen.Child_2() {
+         GH = 0
+        }
+      },
+      Prop_J = new List < System.Int32 > () {},
+      Prop_K = new CodeSnippetGen.Child[] {
+       new CodeSnippetGen.Child() {
+        Name = String.Empty,
+         Child2Data = new CodeSnippetGen.Child_2() {
+          GH = 0
+         }
+       }
+      },
+      ChildList = null
+    };
+    
   </code>
   </pre>
   
 6. What may be a further update?
  
-	Working on auto C# sytle snippet in producing the output and much more to go.
+	<xmp> Working on auto C# sytle snippet in producing the output and much more to go. </xmp> 
   
-
-        If you have any suggestions/ideas pls feel to reach out.
+        
 	
 	Thanks in advance for giving a try. 
 	
-	Have a good day.
+	
     
