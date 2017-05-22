@@ -15,15 +15,14 @@ Creating Object initializer for class in C#
 
 4. How to get the final required code:-
     
-          Thats very simple.	  
-Call this statement with the target type, on which you want to construct the C# Object Code Initializer.	  
-SnippetGenerator.ConstructClassSnippet(typeof(<Target Type Goes Here));This returns a string data which is the required code for you!
+          Thats very simple. Call this statement with the target type, on which you want to construct the C# Object Code Initializer.	  SnippetGenerator.ConstructClassSnippet(typeof(<Target Type Goes Here));This returns a string data which is the required code for you!
 
 
 5. Oh, Really will it produce?
     
      Ok. Lets take an example of the following class structure.
-	 	 
+	 
+   <code>	 
     public class Root
     {
         public int Prop_A { get; set; }
@@ -49,9 +48,11 @@ SnippetGenerator.ConstructClassSnippet(typeof(<Target Type Goes Here));This retu
     {
         public int GH { get; set; }
     }
+   </code>	
 	
 	by passing the type of Root class to the statement as SnippetGenerator.ConstructClassSnippet(typeof(Root)), will produce the result as follows:-
 	
+	<code>
             new CodeSnippetGen.Root()
             {
                 Prop_A = 0,
@@ -92,10 +93,12 @@ GH = 0
                 ChildList = null
             };
   
+  </code>
+  
+  
 6. What may be a further update?
  
 	Working on auto C# sytle snippet in producing the output and much more to go.
-
   
 
         If you have any suggestions/ideas pls feel to reach out.
