@@ -31,13 +31,13 @@ Creating Object initializer for class in C#
         public float Prop_B { get; set; }
         public string Prop_C { get; set; }
         public bool Prop_D { get; set; }
-        <code>public List<Child> Prop_E { get; set; }</code>
-        <code>public List<Root> Prop_F { get; set; } </code>
+        <code>public List&ltChild&gt Prop_E { get; set; }</code>
+        <code>public List&ltRoot&gt Prop_F { get; set; } </code>
         public string[] Prop_H { get; set; }
         public Child Prop_I { get; set; }
-        <code>public List<int> Prop_J { get; set; }</code>
+        <code>public List&ltint&gt Prop_J { get; set; }</code>
         public Child[] Prop_K { get; set; }
-        <code>public List<Root> ChildList { get; set; }</code>
+        <code>public List&ltRoot&gt ChildList { get; set; }</code>
     }
 
     public class Child
