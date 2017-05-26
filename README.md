@@ -70,7 +70,7 @@ Creating Object initializer for class in C#
          }
        }
       },
-      Prop_F = null,
+      Prop_F = null, //Causing self recursion will result to null
       Prop_H = new System.String[] {},
       Prop_I = new CodeSnippetGen.Child() {
        Name = String.Empty,
@@ -87,19 +87,19 @@ Creating Object initializer for class in C#
          }
        }
       },
-      ChildList = null
+      ChildList = null //Causing self recursion will result to null
     };
     
   </code>
   </pre>
   
-6. What may be a further update?
- 
+6. Why Causing self recursion will result to null?
+
+	While constructing the snippet, it will result non ending self recusion, which will lead to the Stack Overflow Exception. Thats why made it as null.
+	
+7. What may be a further update?
+
 	<xmp> Working on auto C# sytle snippet in producing the output and much more to go. </xmp> 
   
-        
-	
-	Thanks in advance for giving a try. 
-	
-	
-    
+
+Thanks for giving a try. 
